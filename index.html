@@ -188,7 +188,7 @@ df &lt;- df %&gt;% filter(Company=="Google") %&gt;% select(-Company)
 ```r
 ggplot(data=df) + geom_bar(aes(x=reorder(Category, Category, function(x) length(x))),
                   fill=daytonred, position=position_dodge(width=1)) + 
-                  coord_flip() + theme(legend.position = "none") +
+                  coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
                   labs(x="Category", y="Number of Jobs") + theme_minimal()
 ```
 
@@ -203,7 +203,7 @@ ggplot(data=df) + geom_bar(aes(x=reorder(Category, Category, function(x) length(
 titles &lt;- sort(table(df$Title), decreasing = T)[1:20]
 df1 &lt;- data.frame(titles)
 ggplot(data=df1, aes(x=reorder(Var1, Freq), y=Freq)) + geom_bar(stat="identity", fill=daytonred, 
-  position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none") +
+  position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
   labs(x="Title", y="Number of Jobs") + theme_minimal()
 ```
 
@@ -218,7 +218,7 @@ ggplot(data=df1, aes(x=reorder(Var1, Freq), y=Freq)) + geom_bar(stat="identity",
 locations &lt;- sort(table(df$Location), decreasing = T)[1:20]
 df2 &lt;- data.frame(locations)
 ggplot(data=df2, aes(x=reorder(Var1, Freq), y=Freq)) + geom_bar(stat="identity", fill=daytonred, 
-  position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none") +
+  position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
   labs(x="Top 20 Popular Locations", y="Number of Jobs") + theme_minimal()
 ```
 
@@ -232,7 +232,7 @@ ggplot(data=df2, aes(x=reorder(Var1, Freq), y=Freq)) + geom_bar(stat="identity",
 
 ```r
 ggplot(data=df3, aes(x=reorder(Degree, Count), y=Count)) + geom_bar(stat="identity", fill=daytonred,
-      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none") +
+      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
       labs(x="Degree", y="Number of Jobs") + theme_minimal()
 ```
 
@@ -246,7 +246,7 @@ ggplot(data=df3, aes(x=reorder(Degree, Count), y=Count)) + geom_bar(stat="identi
 
 ```r
 ggplot(data=df4, aes(x=reorder(Year, Count), y=Count)) + geom_bar(stat="identity", fill=daytonred,
-      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none") +
+      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
       labs(x="Years of Experiences", y="Number of Jobs") + theme_minimal()
 ```
 
@@ -260,7 +260,7 @@ ggplot(data=df4, aes(x=reorder(Year, Count), y=Count)) + geom_bar(stat="identity
 
 ```r
 ggplot(data=df5, aes(x=reorder(Language, Count), y=Count)) + geom_bar(stat="identity", fill=daytonred,
-      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none") +
+      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
       labs(x="Programming Language", y="Number of Jobs") + theme_minimal()
 ```
 
@@ -276,7 +276,7 @@ In the end, I am curious how popular certain subjects are when looking for a job
 
 ```r
 ggplot(data=df6, aes(x=reorder(Subject, Count), y=Count)) + geom_bar(stat="identity", fill=daytonred,
-      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none") +
+      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
       labs(x="Subject", y="Number of Jobs") + theme_minimal()
 ```
 
