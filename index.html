@@ -3,8 +3,9 @@
   <head>
     <title>Math Club Meeting: Dating with Data</title>
     <meta charset="utf-8" />
-    <meta name="author" content=" Ying-Ju Tessa Chen, PhD     Ying-Ju   ychen4@udayton.edu" />
+    <meta name="author" content=" Ying-Ju Tessa Chen, PhD     Ying-Ju   ychen4@udayton.edu " />
     <meta name="date" content="2021-10-05" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/5235085b15.js"></script>
     <link rel="shortcut icon" href="figures/logo.jpg" />
@@ -203,8 +204,8 @@ ggplot(data=df) + geom_bar(aes(x=reorder(Category, Category, function(x) length(
 titles &lt;- sort(table(df$Title), decreasing = T)[1:20]
 df1 &lt;- data.frame(titles)
 ggplot(data=df1, aes(x=reorder(Var1, Freq), y=Freq)) + geom_bar(stat="identity", fill=daytonred, 
-  position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
-  labs(x="Title", y="Number of Jobs") + theme_minimal()
+  position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", 
+  text = element_text(size = 18)) + labs(x="Title", y="Number of Jobs") + theme_minimal()
 ```
 
 &lt;img src="analysis_files/figure-html/job_titles-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -218,8 +219,8 @@ ggplot(data=df1, aes(x=reorder(Var1, Freq), y=Freq)) + geom_bar(stat="identity",
 locations &lt;- sort(table(df$Location), decreasing = T)[1:20]
 df2 &lt;- data.frame(locations)
 ggplot(data=df2, aes(x=reorder(Var1, Freq), y=Freq)) + geom_bar(stat="identity", fill=daytonred, 
-  position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
-  labs(x="Top 20 Popular Locations", y="Number of Jobs") + theme_minimal()
+  position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", 
+  text = element_text(size = 18)) + labs(x="Top 20 Popular Locations", y="Number of Jobs") + theme_minimal()
 ```
 
 &lt;img src="analysis_files/figure-html/job_locations-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -232,8 +233,8 @@ ggplot(data=df2, aes(x=reorder(Var1, Freq), y=Freq)) + geom_bar(stat="identity",
 
 ```r
 ggplot(data=df3, aes(x=reorder(Degree, Count), y=Count)) + geom_bar(stat="identity", fill=daytonred,
-      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
-      labs(x="Degree", y="Number of Jobs") + theme_minimal()
+      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", 
+      text = element_text(size = 18)) + labs(x="Degree", y="Number of Jobs") + theme_minimal()
 ```
 
 &lt;img src="analysis_files/figure-html/job_degrees-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -246,8 +247,8 @@ ggplot(data=df3, aes(x=reorder(Degree, Count), y=Count)) + geom_bar(stat="identi
 
 ```r
 ggplot(data=df4, aes(x=reorder(Year, Count), y=Count)) + geom_bar(stat="identity", fill=daytonred,
-      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
-      labs(x="Years of Experiences", y="Number of Jobs") + theme_minimal()
+      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", 
+      text = element_text(size = 18)) + labs(x="Years of Experiences", y="Number of Jobs") + theme_minimal()
 ```
 
 &lt;img src="analysis_files/figure-html/exp_years-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -260,8 +261,8 @@ ggplot(data=df4, aes(x=reorder(Year, Count), y=Count)) + geom_bar(stat="identity
 
 ```r
 ggplot(data=df5, aes(x=reorder(Language, Count), y=Count)) + geom_bar(stat="identity", fill=daytonred,
-      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
-      labs(x="Programming Language", y="Number of Jobs") + theme_minimal()
+      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", 
+      text = element_text(size = 18)) + labs(x="Programming Language", y="Number of Jobs") + theme_minimal()
 ```
 
 &lt;img src="analysis_files/figure-html/job_languages-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -276,8 +277,8 @@ In the end, I am curious how popular certain subjects are when looking for a job
 
 ```r
 ggplot(data=df6, aes(x=reorder(Subject, Count), y=Count)) + geom_bar(stat="identity", fill=daytonred,
-      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
-      labs(x="Subject", y="Number of Jobs") + theme_minimal()
+      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", 
+      text = element_text(size = 18)) + labs(x="Subject", y="Number of Jobs") + theme_minimal()
 ```
 
 &lt;img src="analysis_files/figure-html/job_subjects-1.png" width="65%" style="display: block; margin: auto;" /&gt;
