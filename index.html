@@ -82,7 +82,7 @@ class: center, middle, inverse, title-slide
 
 - Google published all of their jobs at [https://careers.google.com/](https://careers.google.com/). 
 
-- The data are collected using Selenium by scraping all of the jobs text for Google Career site and provided in [kaggle.com](https://www.kaggle.com/niyamatalmass/google-job-skills?). 
+- The data are collected using Selenium by scraping all of the jobs text from the Google Career site and provided in [kaggle.com](https://www.kaggle.com/niyamatalmass/google-job-skills?) by [Niyamat Ullah](https://www.kaggle.com/niyamatalmass). 
 
 - Available variables
 
@@ -105,7 +105,7 @@ class: center, middle, inverse, title-slide
 
 ```r
 df &lt;- read_csv("job_skills.csv")
-plot_intro(df)
+plot_intro(df, ggtheme = theme_minimal(base_size = 18))
 ```
 
 &lt;img src="analysis_files/figure-html/read_data-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -116,7 +116,7 @@ plot_intro(df)
 
 
 ```r
-plot_missing(df)
+plot_missing(df, ggtheme = theme_minimal(base_size = 18))
 ```
 
 &lt;img src="analysis_files/figure-html/missing_values-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -189,8 +189,8 @@ df &lt;- df %&gt;% filter(Company=="Google") %&gt;% select(-Company)
 ```r
 ggplot(data=df) + geom_bar(aes(x=reorder(Category, Category, function(x) length(x))),
                   fill=daytonred, position=position_dodge(width=1)) + 
-                  coord_flip() + theme(legend.position = "none", text = element_text(size = 18)) +
-                  labs(x="Category", y="Number of Jobs") + theme_minimal()
+                  coord_flip() + theme(legend.position = "none") +
+                  labs(x="Job Category", y="Number of Jobs") + theme_minimal(base_size = 18)
 ```
 
 &lt;img src="analysis_files/figure-html/job_categories-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -204,8 +204,8 @@ ggplot(data=df) + geom_bar(aes(x=reorder(Category, Category, function(x) length(
 titles &lt;- sort(table(df$Title), decreasing = T)[1:20]
 df1 &lt;- data.frame(titles)
 ggplot(data=df1, aes(x=reorder(Var1, Freq), y=Freq)) + geom_bar(stat="identity", fill=daytonred, 
-  position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", 
-  text = element_text(size = 18)) + labs(x="Title", y="Number of Jobs") + theme_minimal()
+  position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none") + 
+  labs(x="Title", y="Number of Jobs") + theme_minimal(base_size = 26)
 ```
 
 &lt;img src="analysis_files/figure-html/job_titles-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -219,8 +219,8 @@ ggplot(data=df1, aes(x=reorder(Var1, Freq), y=Freq)) + geom_bar(stat="identity",
 locations &lt;- sort(table(df$Location), decreasing = T)[1:20]
 df2 &lt;- data.frame(locations)
 ggplot(data=df2, aes(x=reorder(Var1, Freq), y=Freq)) + geom_bar(stat="identity", fill=daytonred, 
-  position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", 
-  text = element_text(size = 18)) + labs(x="Top 20 Popular Locations", y="Number of Jobs") + theme_minimal()
+  position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none") +
+  labs(x="Top 20 Popular Locations", y="Number of Jobs") + theme_minimal(base_size = 18)
 ```
 
 &lt;img src="analysis_files/figure-html/job_locations-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -233,8 +233,8 @@ ggplot(data=df2, aes(x=reorder(Var1, Freq), y=Freq)) + geom_bar(stat="identity",
 
 ```r
 ggplot(data=df3, aes(x=reorder(Degree, Count), y=Count)) + geom_bar(stat="identity", fill=daytonred,
-      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", 
-      text = element_text(size = 18)) + labs(x="Degree", y="Number of Jobs") + theme_minimal()
+      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none") +
+      labs(x="Degree", y="Number of Jobs") + theme_minimal(base_size = 18)
 ```
 
 &lt;img src="analysis_files/figure-html/job_degrees-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -247,8 +247,8 @@ ggplot(data=df3, aes(x=reorder(Degree, Count), y=Count)) + geom_bar(stat="identi
 
 ```r
 ggplot(data=df4, aes(x=reorder(Year, Count), y=Count)) + geom_bar(stat="identity", fill=daytonred,
-      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", 
-      text = element_text(size = 18)) + labs(x="Years of Experiences", y="Number of Jobs") + theme_minimal()
+      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none") +
+      labs(x="Year of Experiences", y="Number of Jobs") + theme_minimal(base_size = 18)
 ```
 
 &lt;img src="analysis_files/figure-html/exp_years-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -261,8 +261,8 @@ ggplot(data=df4, aes(x=reorder(Year, Count), y=Count)) + geom_bar(stat="identity
 
 ```r
 ggplot(data=df5, aes(x=reorder(Language, Count), y=Count)) + geom_bar(stat="identity", fill=daytonred,
-      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", 
-      text = element_text(size = 18)) + labs(x="Programming Language", y="Number of Jobs") + theme_minimal()
+      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none") +
+      labs(x="Programming Language", y="Number of Jobs") + theme_minimal(base_size = 18)
 ```
 
 &lt;img src="analysis_files/figure-html/job_languages-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -277,8 +277,8 @@ In the end, I am curious how popular certain subjects are when looking for a job
 
 ```r
 ggplot(data=df6, aes(x=reorder(Subject, Count), y=Count)) + geom_bar(stat="identity", fill=daytonred,
-      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none", 
-      text = element_text(size = 18)) + labs(x="Subject", y="Number of Jobs") + theme_minimal()
+      position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none") +
+      labs(x="Subject", y="Number of Jobs") + theme_minimal(base_size = 18)
 ```
 
 &lt;img src="analysis_files/figure-html/job_subjects-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -316,6 +316,8 @@ ggplot(data=df6, aes(x=reorder(Subject, Count), y=Count)) + geom_bar(stat="ident
 
 - The formatting of slides is provided by Dr. Fadel M. Megahed [@fmegahed](https://github.com/fmegahed). 
 ]
+
+- The example data are provided in [kaggle.com](https://www.kaggle.com/niyamatalmass) by [Niyamat Ullah](https://www.kaggle.com/niyamatalmass). 
 
 .pull-right[
 &lt;img src="https://www.verouden.net/slides/presentation-xaringan/img/questions.gif" width="350" height="350" /&gt;
