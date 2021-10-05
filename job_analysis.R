@@ -24,7 +24,7 @@ df1 <- data.frame(titles)
 ggplot(data=df1, aes(x=reorder(Var1, Freq), y=Freq)) + 
   geom_bar(stat="identity", fill=daytonred, position=position_dodge(width=1)) + 
   coord_flip() + theme(legend.position = "none") + 
-  labs(x="Title", y="Number of Jobs") + theme_minimal(base_size = 18)
+  labs(x="Top 20 Popular Job Titles", y="Number of Jobs") + theme_minimal(base_size = 18)
 
 # Job Location
 locations <- sort(table(df$Location), decreasing = T)[1:20]
