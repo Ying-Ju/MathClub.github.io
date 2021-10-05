@@ -3,9 +3,8 @@
   <head>
     <title>Math Club Meeting: Dating with Data</title>
     <meta charset="utf-8" />
-    <meta name="author" content=" Ying-Ju Tessa Chen, PhD     Ying-Ju   ychen4@udayton.edu " />
+    <meta name="author" content=" Ying-Ju Tessa Chen, PhD     Ying-Ju   ychen4@udayton.edu" />
     <meta name="date" content="2021-10-05" />
-    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/5235085b15.js"></script>
     <link rel="shortcut icon" href="figures/logo.jpg" />
@@ -175,7 +174,7 @@ df &lt;- df %&gt;% filter(Company=="Google") %&gt;% select(-Company)
 
 - Academic degree
 
-- Year of experiences
+- Years of experience
 
 - Programming languages
 
@@ -208,7 +207,7 @@ ggplot(data=df1, aes(x=reorder(Var1, Freq), y=Freq)) + geom_bar(stat="identity",
   labs(x="Title", y="Number of Jobs") + theme_minimal(base_size = 26)
 ```
 
-&lt;img src="analysis_files/figure-html/job_titles-1.png" width="65%" style="display: block; margin: auto;" /&gt;
+&lt;img src="analysis_files/figure-html/job_titles-1.png" width="65%" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ---
 
@@ -241,7 +240,7 @@ ggplot(data=df3, aes(x=reorder(Degree, Count), y=Count)) + geom_bar(stat="identi
 
 
 ---
-**Year of Experiences**
+**Years of Experience**
 
 
 
