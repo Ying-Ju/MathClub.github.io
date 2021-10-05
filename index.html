@@ -3,8 +3,9 @@
   <head>
     <title>Math Club Meeting: Dating with Data</title>
     <meta charset="utf-8" />
-    <meta name="author" content=" Ying-Ju Tessa Chen, PhD     Ying-Ju   ychen4@udayton.edu" />
+    <meta name="author" content=" Ying-Ju Tessa Chen, PhD     Ying-Ju   ychen4@udayton.edu " />
     <meta name="date" content="2021-10-05" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/5235085b15.js"></script>
     <link rel="shortcut icon" href="figures/logo.jpg" />
@@ -247,7 +248,7 @@ ggplot(data=df3, aes(x=reorder(Degree, Count), y=Count)) + geom_bar(stat="identi
 ```r
 ggplot(data=df4, aes(x=reorder(Year, Count), y=Count)) + geom_bar(stat="identity", fill=daytonred,
       position=position_dodge(width=1)) + coord_flip() + theme(legend.position = "none") +
-      labs(x="Year of Experiences", y="Number of Jobs") + theme_minimal(base_size = 18)
+      labs(x="Years of Experience", y="Number of Jobs") + theme_minimal(base_size = 18)
 ```
 
 &lt;img src="analysis_files/figure-html/exp_years-1.png" width="65%" style="display: block; margin: auto;" /&gt;
@@ -308,6 +309,8 @@ ggplot(data=df6, aes(x=reorder(Subject, Count), y=Count)) + geom_bar(stat="ident
 
 .pull-left[
 - Please do not hesitate to contact Dr. Chen if you have questions pertaining to learning R or other languages.  Please email me at &lt;a href="mailto:ychen@udayton.edu"&gt;&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;&amp;nbsp; ychen4@udayton.edu&lt;/a&gt;.
+
+- The R code used in this presentation can be found [here](https://raw.githubusercontent.com/Ying-Ju/MathClub.github.io/main/job_analysis.R).
 
 - Slides were created via the R package **xaringan**, with styling based on:  
   * [xariganthemer](https://cran.r-project.org/web/packages/xaringanthemer/vignettes/xaringanthemer.html) package, and  
